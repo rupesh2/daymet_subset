@@ -1,5 +1,5 @@
-# Subsetting Daymet dataset by polygon
+# Spatiotemporal subsetting Daymet daily meteorology dataset.
 
-Spatiotemporal subsetting Daymet daily meteorology dataset.
-
-[Jupyter Notebook](daymet_polygon_subset.ipynb)
+- [Download Daymet datasets for a Polygonal Area](daymet_polygon_subset.ipynb)
+- [Get pixel value from mosaic Daymet file](get_pixel_mosaic.ipynb)
+- [Get pixel value from tiled Daymet file](get_pixel_tiled.ipynb)
