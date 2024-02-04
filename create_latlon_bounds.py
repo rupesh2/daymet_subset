@@ -58,26 +58,13 @@ def main():
         ymax = y + res/2
         xmin = x - res/2
         xmax = x + res/2
+        bounds = [(ymin, xmax), (ymax, xmax), (ymax, xmin), (ymin, xmin)]
 
-        # compute ymin,xmax
-        latlon = lcc_to_latlon(ymin, xmax)
-        lonvert[:, :, 0] = latlon[0]
-        latvert[:, :, 0] = latlon[1]
-
-        # compute ymax, xmax
-        latlon = lcc_to_latlon(ymax, xmax)
-        lonvert[:, :, 1] = latlon[0]
-        latvert[:, :, 1] = latlon[1]
-
-        # compute ymax, xmin
-        latlon = lcc_to_latlon(ymax, xmin)
-        lonvert[:, :, 2] = latlon[0]
-        latvert[:, :, 2] = latlon[1]
-
-        # compute ymin, xmin
-        latlon = lcc_to_latlon(ymin, xmin)
-        lonvert[:, :, 3] = latlon[0]
-        latvert[:, :, 3] = latlon[1]
+        # compute bound coordinates
+        for i, (yy, xx) in enumerate(bounds):
+            latlon = lcc_to_latlon(yy, xx)
+            lonvert[:, :, i] = latlon[0]
+            latvert[:, :, i] = latlon[1]
 
 if __name__ == "__main__":
     main()
