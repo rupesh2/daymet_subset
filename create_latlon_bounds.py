@@ -27,8 +27,7 @@ def main():
 
     with nc.Dataset(DAYMET_F, 'r+') as ds:
         # add vertices dimension
-        dname = 'vertices'
-        ds.createDimension(dname, 4)
+        ds.createDimension('vertices', 4)
 
         # reading lat/lon variables
         lat = ds['lat']
